@@ -1,0 +1,38 @@
+.kontrl-popup__default-template {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.kontrl-popup__default-template__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#000, 0.6);
+
+  // TODO: get z-index from popup.ts (to be able to stack and allow for a starting z-index)
+  z-index: 5;
+}
+
+.kontrl-popup__default-template__box {
+  position: relative;
+  margin-top: 100px;
+  z-index: 6;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.kontrl-popup__default-template__title {
+
+}
+
+.kontrl-popup__default-template__content {
+
+}

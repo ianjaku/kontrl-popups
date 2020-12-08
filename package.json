@@ -1,0 +1,23 @@
+{
+  "name": "kontrl-popups",
+  "version": "0.0.1",
+  "description": "A popup library made for Kontrl CMS but perfectly be used on its own",
+  "main": "dist/popups.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianjaku/kontrl-popups.git"
+  },
+  "author": "Ian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ianjaku/kontrl-popups/issues"
+  },
+  "homepage": "https://github.com/ianjaku/kontrl-popups#readme",
+  "devDependencies": {
+    "sass": "^1.30.0",
+    "typescript": "^4.1.2"
+  }
+}
