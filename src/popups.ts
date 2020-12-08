@@ -1,14 +1,14 @@
-import KontrlPopup from "./Popup";
-import _GenericPopup from "./GenericPopup";
+import Popup from "./Popup";
+import _GenericPopup from "./generic_popup/GenericPopup";
+import _InputItem from "./generic_popup/InputItem";
 
-
-export function isPrepared(popup: KontrlPopup) {
+export function isBuilt(popup: Popup) {
   const item = document.getElementById(popup.getId());
   return item != null;
 }
 
-export function preparePopup(popup: KontrlPopup) {
-  if (isPrepared(popup)) return;
+export function build(popup: Popup) {
+  if (isBuilt(popup)) return;
   
   const wrapper = document.createElement("div");
   wrapper.id = popup.getId();
@@ -19,16 +19,32 @@ export function preparePopup(popup: KontrlPopup) {
   document.body.appendChild(wrapper);
 }
 
-export function showPopup(popup: KontrlPopup) {
-  preparePopup(popup);
-  popup.show();
+export function showPopup(popup: Popup) {
+  return new Promise((resolve) => {
+    build(popup);
+    popup.show((name, context) => {
+      if (name === "finish") {
+        resolve(context);
+      }
+    });
+  })
+}
+
+export function destroy(popup: Popup) {
+  const wrapper = document.getElementById(popup.getId());
+  if (wrapper) {
+    wrapper.remove();
+  }
 }
 
 export const GenericPopup = _GenericPopup;
+export const InputItem = _InputItem;
 
 export default {
-  isPrepared,
-  preparePopup,
+  isBuilt,
+  build,
   showPopup,
+  destroy,
+  InputItem: _InputItem,
   GenericPopup: _GenericPopup
 }

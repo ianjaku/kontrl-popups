@@ -1,5 +1,75 @@
 @import "../util/defaultTemplate";
 
-body {
-  // background-color: orange;
+.kontlr-popup__generic__row {
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kontrl-popup__generic__item {
+  width: 100%;
+}
+
+.kontrl-popup__generic__label {
+  color: rgba(#223550, 0.8);
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 7px;
+  display: block;
+}
+
+.kontrl-popup__generic__footer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.kontrl-popup__generic__button {
+  background-color: #1E77F2;
+  line-height: 1;
+  padding: 15px 30px;
+  font-family: "Barlow", "Helvetica", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: darken(#1E77F2, 10%);
+  }
+
+  &:active {
+    background-color: #1E77F2;
+  }
+}
+
+
+// -
+// InputItem
+// -
+.kontrl-popup__generic__input {
+  width: 100%;
+  border: 1px solid #CCD4DB;
+  color: #223550;
+  font-size: 18px;
+  font-family: "Barlow", "Helvetica", sans-serif;
+  line-height: 126%;
+  font-weight: 500;
+  padding: 15px 17px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+
+  &:focus {
+    border-color: #1E77F2;
+  }
 }

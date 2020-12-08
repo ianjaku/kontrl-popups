@@ -1,10 +1,14 @@
+interface Params {
+    title: string;
+    withBG?: boolean;
+}
 declare class DefaultTemplate {
-    static build(params: {
-        title: string;
-        withBG?: boolean;
-    }, onClose: () => void): {
-        templateEl: HTMLDivElement;
-        contentEl: HTMLDivElement;
-    };
+    private templateEl;
+    private contentEl;
+    constructor(params: Params, onClose: () => void);
+    getTemplateEl(): HTMLElement;
+    getContentEl(): HTMLElement;
+    show(): void;
+    hide(): void;
 }
 export default DefaultTemplate;

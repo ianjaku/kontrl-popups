@@ -1,19 +1,27 @@
+interface Params {
+  title: string;
+  withBG?: boolean;
+}
+
 class DefaultTemplate {
 
-  public static build(params: { title: string, withBG?: boolean }, onClose: () => void) {
-    const templateEl = document.createElement("div");
-    templateEl.classList.add("kontrl-popup__default-template");
+  private templateEl: HTMLElement;
+  private contentEl: HTMLElement;
+
+  constructor(params: Params, onClose: () => void) {
+    this.templateEl = document.createElement("div");
+    this.templateEl.classList.add("kontrl-popup__default-template");
 
     if (params.withBG !== false) {
       const bgEl = document.createElement("div");
       bgEl.classList.add("kontrl-popup__default-template__bg");
       bgEl.addEventListener("click", () => onClose());
-      templateEl.appendChild(bgEl);
+      this.templateEl.appendChild(bgEl);
     }
 
     const boxEl = document.createElement("div");
     boxEl.classList.add("kontrl-popup__default-template__box");
-    templateEl.appendChild(boxEl);
+    this.templateEl.appendChild(boxEl);
 
     const closeButtonEl = document.createElement("div");
     closeButtonEl.classList.add("kontrl-popup__default-template__close");
@@ -25,14 +33,25 @@ class DefaultTemplate {
     titleEl.appendChild(document.createTextNode(params.title))
     boxEl.appendChild(titleEl);
 
-    const contentEl = document.createElement("div");
-    contentEl.classList.add("kontrl-popup__default-template__content");
-    boxEl.appendChild(contentEl);
+    this.contentEl = document.createElement("div");
+    this.contentEl.classList.add("kontrl-popup__default-template__content");
+    boxEl.appendChild(this.contentEl);
+  }
 
-    return {
-      templateEl,
-      contentEl
-    }
+  public getTemplateEl() {
+    return this.templateEl;
+  }
+
+  public getContentEl() {
+    return this.contentEl;
+  }
+
+  public show() {
+    this.templateEl.classList.add("kontrl-popup__default-template--active");
+  }
+
+  public hide() {
+    this.templateEl.classList.remove("kontrl-popup__default-template--active");
   }
   
 }

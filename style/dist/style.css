@@ -1,13 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap");
 .kontrl-popup__default-template {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
   justify-content: center;
   align-items: flex-start;
+  display: none;
+  visibility: hidden;
+}
+.kontrl-popup__default-template--active {
+  visibility: visible;
+  display: flex;
 }
 
 .kontrl-popup__default-template__bg {
@@ -22,10 +27,126 @@
 
 .kontrl-popup__default-template__box {
   position: relative;
-  margin-top: 100px;
+  margin-top: 150px;
   z-index: 6;
   background-color: white;
   border-radius: 10px;
+  width: 90%;
+  max-width: 650px;
+  padding: 50px 50px;
+  box-sizing: border-box;
+}
+
+.kontrl-popup__default-template__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  cursor: pointer;
+}
+.kontrl-popup__default-template__close::before {
+  content: "";
+  display: block;
+  background-color: #223550;
+  height: 2px;
+  width: 100%;
+  position: relative;
+  transform: rotate(-45deg);
+}
+.kontrl-popup__default-template__close::after {
+  content: "";
+  display: block;
+  background-color: #223550;
+  height: 2px;
+  width: 100%;
+  position: relative;
+  transform: translateY(-2px) rotate(45deg);
+}
+
+.kontrl-popup__default-template__title {
+  text-align: center;
+  font-family: "Barlow", "Helvetica", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #223550;
+  letter-spacing: -0.1px;
+  padding: 0 20px;
+  line-height: 1.2;
+}
+
+.kontrl-popup__default-template__content {
+  margin-top: 50px;
+}
+
+.kontlr-popup__generic__row {
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kontrl-popup__generic__item {
+  width: 100%;
+}
+
+.kontrl-popup__generic__label {
+  color: rgba(34, 53, 80, 0.8);
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 7px;
+  display: block;
+}
+
+.kontrl-popup__generic__footer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.kontrl-popup__generic__button {
+  background-color: #1E77F2;
+  line-height: 1;
+  padding: 15px 30px;
+  font-family: "Barlow", "Helvetica", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+.kontrl-popup__generic__button:hover {
+  background-color: #0c5fd1;
+}
+.kontrl-popup__generic__button:active {
+  background-color: #1E77F2;
+}
+
+.kontrl-popup__generic__input {
+  width: 100%;
+  border: 1px solid #CCD4DB;
+  color: #223550;
+  font-size: 18px;
+  font-family: "Barlow", "Helvetica", sans-serif;
+  line-height: 126%;
+  font-weight: 500;
+  padding: 15px 17px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+}
+.kontrl-popup__generic__input:focus {
+  border-color: #1E77F2;
 }
 
 /*# sourceMappingURL=style.css.map */

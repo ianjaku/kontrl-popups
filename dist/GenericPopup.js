@@ -23,13 +23,11 @@ var GenericPopup = /** @class */ (function (_super) {
     function GenericPopup(params) {
         var _this = _super.call(this) || this;
         _this.params = params;
+        _this.rows = params.rows || [];
         return _this;
     }
     GenericPopup.prototype.build = function () {
         var _a = DefaultTemplate_1.default.build({ title: this.params.title }, this.hide.bind(this)), templateEl = _a.templateEl, contentEl = _a.contentEl;
-        var popupEl = document.createElement("div");
-        popupEl.appendChild(document.createTextNode("test"));
-        contentEl.appendChild(popupEl);
         return templateEl;
     };
     GenericPopup.prototype.show = function () {
@@ -37,6 +35,8 @@ var GenericPopup = /** @class */ (function (_super) {
     };
     GenericPopup.prototype.hide = function () {
         console.log("hide");
+    };
+    GenericPopup.prototype.addRow = function (labelName) {
     };
     return GenericPopup;
 }(Popup_1.default));
