@@ -1,6 +1,6 @@
 {
   "name": "kontrl-popups",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A popup library made for Kontrl CMS but perfectly be used on its own",
   "main": "dist/popups.js",
   "scripts": {
