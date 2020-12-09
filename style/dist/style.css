@@ -205,6 +205,7 @@
   height: 100%;
   z-index: 1;
   border-radius: 4px;
+  object-fit: contain;
 }
 .kontrl-popup__generic__image-preview--active {
   display: block;

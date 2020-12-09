@@ -25,7 +25,6 @@ class ImageItem extends GenericPopupItem {
 
     if (params.value) {
       this.value = params.value;
-      this.previewImage(params.value);
     }
   }
 
@@ -47,6 +46,9 @@ class ImageItem extends GenericPopupItem {
     this.previewEl = document.createElement("img");
     this.previewEl.classList.add("kontrl-popup__generic__image-preview");
     dropboxEl.appendChild(this.previewEl);
+    if (this.value != null) {
+      this.previewImage(this.value);
+    }
 
     const inputEl = document.createElement("input");
     inputEl.type = "file";

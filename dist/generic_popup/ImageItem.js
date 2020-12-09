@@ -66,7 +66,6 @@ var ImageItem = /** @class */ (function (_super) {
         _this.imageParams = params;
         if (params.value) {
             _this.value = params.value;
-            _this.previewImage(params.value);
         }
         return _this;
     }
@@ -86,6 +85,9 @@ var ImageItem = /** @class */ (function (_super) {
         this.previewEl = document.createElement("img");
         this.previewEl.classList.add("kontrl-popup__generic__image-preview");
         dropboxEl.appendChild(this.previewEl);
+        if (this.value != null) {
+            this.previewImage(this.value);
+        }
         var inputEl = document.createElement("input");
         inputEl.type = "file";
         inputEl.classList.add("kontrl-popup__generic__image-input");
