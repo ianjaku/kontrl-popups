@@ -69,6 +69,11 @@ class ImageItem extends GenericPopupItem {
     return this.value;
   }
 
+  public setValue(val: string | File) {
+    this.value = val;
+    this.previewImage(val);
+  }
+
   private async previewImage(img: string | File) {
     if (this.previewEl == null) return;
 

@@ -104,6 +104,10 @@ var ImageItem = /** @class */ (function (_super) {
     ImageItem.prototype.getContent = function () {
         return this.value;
     };
+    ImageItem.prototype.setValue = function (val) {
+        this.value = val;
+        this.previewImage(val);
+    };
     ImageItem.prototype.previewImage = function (img) {
         return __awaiter(this, void 0, void 0, function () {
             var imgSrc;

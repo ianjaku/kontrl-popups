@@ -12,6 +12,7 @@ declare class ImageItem extends GenericPopupItem {
     constructor(params: Params);
     protected buildContent(): HTMLElement;
     getContent(): string | File | null;
+    setValue(val: string | File): void;
     private previewImage;
 }
 export default ImageItem;
