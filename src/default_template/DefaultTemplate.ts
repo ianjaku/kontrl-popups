@@ -1,5 +1,6 @@
 interface Params {
   title: string;
+  subTitle?: string;
   withBG?: boolean;
 }
 
@@ -32,6 +33,13 @@ class DefaultTemplate {
     titleEl.classList.add("kontrl-popup__default-template__title");
     titleEl.appendChild(document.createTextNode(params.title))
     boxEl.appendChild(titleEl);
+
+    if (params.subTitle) {
+      const subTitleEl = document.createElement("div");
+      subTitleEl.classList.add("kontrl-popup__default-template__sub-title");
+      subTitleEl.appendChild(document.createTextNode(params.subTitle));
+      boxEl.appendChild(subTitleEl);
+    }
 
     this.contentEl = document.createElement("div");
     this.contentEl.classList.add("kontrl-popup__default-template__content");

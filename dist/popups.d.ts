@@ -1,12 +1,14 @@
 import Popup from "./Popup";
 import _GenericPopup from "./generic_popup/GenericPopup";
 import _InputItem from "./generic_popup/InputItem";
+import _ImageItem from "./generic_popup/ImageItem";
 export declare function isBuilt(popup: Popup): boolean;
 export declare function build(popup: Popup): void;
 export declare function showPopup(popup: Popup): Promise<unknown>;
 export declare function destroy(popup: Popup): void;
 export declare const GenericPopup: typeof _GenericPopup;
 export declare const InputItem: typeof _InputItem;
+export declare const ImageItem: typeof _ImageItem;
 declare const _default: {
     isBuilt: typeof isBuilt;
     build: typeof build;
@@ -14,5 +16,6 @@ declare const _default: {
     destroy: typeof destroy;
     InputItem: typeof _InputItem;
     GenericPopup: typeof _GenericPopup;
+    ImageItem: typeof _ImageItem;
 };
 export default _default;

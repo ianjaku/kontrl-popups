@@ -24,7 +24,7 @@ var GenericPopup = /** @class */ (function (_super) {
         var _this = _super.call(this) || this;
         _this.params = params;
         _this.items = params.items || [];
-        _this.template = new DefaultTemplate_1.default({ title: params.title }, function () {
+        _this.template = new DefaultTemplate_1.default({ title: params.title, subTitle: params.subTitle, withBG: params.withBG }, function () {
             _this.throwEvent("finish");
             _this.hide();
         });

@@ -32,7 +32,10 @@ var TextItem = /** @class */ (function (_super) {
     TextItem.prototype.buildContent = function () {
         this.inputEl.classList.add("kontrl-popup__generic__input");
         this.inputEl.name = this.textItemParams.name;
-        this.inputEl.id = this.textItemParams.name;
+        this.inputEl.id = this.getId();
+        if (this.textItemParams.value) {
+            this.inputEl.value = this.textItemParams.value;
+        }
         if (this.textItemParams.placeholder) {
             this.inputEl.placeholder = this.textItemParams.placeholder;
         }

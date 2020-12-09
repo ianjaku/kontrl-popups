@@ -8,10 +8,12 @@
   align-items: flex-start;
   display: none;
   visibility: hidden;
+  opacity: 0;
 
   &--active {
-    visibility: visible;
     display: flex;
+    visibility: visible;
+    opacity: 1;
   }
 }
 
@@ -82,6 +84,18 @@
   letter-spacing: -0.1px;
   padding: 0 20px;
   line-height: 1.2;
+}
+
+.kontrl-popup__default-template__sub-title {
+  text-align: center;
+  font-family: "Barlow", "Helvetica", sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: #838E9D;
+  padding: 0 20px;
+  box-sizing: border-box;
+  line-height: 1.3;
+  margin-top: 5px;
 }
 
 .kontrl-popup__default-template__content {

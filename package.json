@@ -4,7 +4,8 @@
   "description": "A popup library made for Kontrl CMS but perfectly be used on its own",
   "main": "dist/popups.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "npx tsc --watch",
+    "watch-sass": "sass --watch ./style/style.scss ./style/dist/style.css"
   },
   "repository": {
     "type": "git",

@@ -3,6 +3,7 @@ import GenericPopupItem from "./GenericPopupItem";
 interface Params {
   name: string;
   label: string;
+  value: string;
   type?: "text" | "number" | "date" | string;
   placeholder?: string;
 }
@@ -24,7 +25,11 @@ class TextItem extends GenericPopupItem {
   protected buildContent(): HTMLElement {
     this.inputEl.classList.add("kontrl-popup__generic__input");
     this.inputEl.name = this.textItemParams.name;
-    this.inputEl.id = this.textItemParams.name;
+    this.inputEl.id = this.getId();
+
+    if (this.textItemParams.value) {
+      this.inputEl.value = this.textItemParams.value;
+    }
 
     if (this.textItemParams.placeholder) {
       this.inputEl.placeholder = this.textItemParams.placeholder;

@@ -1,5 +1,6 @@
 interface Params {
     title: string;
+    subTitle?: string;
     withBG?: boolean;
 }
 declare class DefaultTemplate {

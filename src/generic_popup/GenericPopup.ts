@@ -4,8 +4,10 @@ import GenericPopupItem from "./GenericPopupItem";
 
 interface Params {
   title: string;
+  subTitle?: string;
   items?: GenericPopupItem[];
   submitText?: string;
+  withBG?: boolean;
 }
 
 class GenericPopup extends Popup {
@@ -18,10 +20,13 @@ class GenericPopup extends Popup {
     super();
     this.params = params;
     this.items = params.items || [];
-    this.template = new DefaultTemplate({ title: params.title }, () => {
-      this.throwEvent("finish");
-      this.hide();
-    });
+    this.template = new DefaultTemplate(
+      { title: params.title, subTitle: params.subTitle, withBG: params.withBG },
+      () => {
+        this.throwEvent("finish");
+        this.hide();
+      }
+    );
   }
   
   public build() {

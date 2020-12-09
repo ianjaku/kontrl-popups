@@ -3,3 +3,4 @@ example/node_modules
 .idea
 .vscode
 example/dist
+example/.cache

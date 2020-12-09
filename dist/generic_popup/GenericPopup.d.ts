@@ -2,8 +2,10 @@ import Popup from "../Popup";
 import GenericPopupItem from "./GenericPopupItem";
 interface Params {
     title: string;
+    subTitle?: string;
     items?: GenericPopupItem[];
     submitText?: string;
+    withBG?: boolean;
 }
 declare class GenericPopup extends Popup {
     private params;

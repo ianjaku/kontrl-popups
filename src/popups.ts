@@ -1,6 +1,7 @@
 import Popup from "./Popup";
 import _GenericPopup from "./generic_popup/GenericPopup";
 import _InputItem from "./generic_popup/InputItem";
+import _ImageItem from "./generic_popup/ImageItem";
 
 export function isBuilt(popup: Popup) {
   const item = document.getElementById(popup.getId());
@@ -39,6 +40,7 @@ export function destroy(popup: Popup) {
 
 export const GenericPopup = _GenericPopup;
 export const InputItem = _InputItem;
+export const ImageItem = _ImageItem;
 
 export default {
   isBuilt,
@@ -46,5 +48,6 @@ export default {
   showPopup,
   destroy,
   InputItem: _InputItem,
-  GenericPopup: _GenericPopup
+  GenericPopup: _GenericPopup,
+  ImageItem: _ImageItem
 }
