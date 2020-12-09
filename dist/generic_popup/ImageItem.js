@@ -66,6 +66,7 @@ var ImageItem = /** @class */ (function (_super) {
         _this.imageParams = params;
         if (params.value) {
             _this.value = params.value;
+            _this.previewImage(params.value);
         }
         return _this;
     }

@@ -25,6 +25,7 @@ class ImageItem extends GenericPopupItem {
 
     if (params.value) {
       this.value = params.value;
+      this.previewImage(params.value);
     }
   }
 

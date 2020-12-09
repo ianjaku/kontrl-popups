@@ -4,7 +4,7 @@ import ImageItem from "../dist/generic_popup/ImageItem";
 
 const buttonEl = document.getElementById("button");
 
-const myPopup = new GenericPopup({ title: "Create a project", subTitle: "Please choose an image and it's alt tag" });
+const myPopup = new GenericPopup({ title: "Create a project" });
 myPopup.addItem(new InputItem({ name: "test", label: "Testttt" }))
 myPopup.addItem(new InputItem({ name: "test2", label: "Test2" }))
 myPopup.addItem(new ImageItem({ name: "img", label: "My Image" }));
